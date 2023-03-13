@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 
-public class MyLimitedList <T> implements IMyLimitedList{
+public class MyLimitedList <T> implements IMyLimitedList <T>{
     protected ArrayList <T> m_items = new ArrayList<>();
     protected final int m_max_items;
 
@@ -14,7 +14,7 @@ public class MyLimitedList <T> implements IMyLimitedList{
         if (m_items.size() == m_max_items){
             m_items.remove(0);
         }
-        m_items.add((T) item);
+        m_items.add(item);
     }
 
     public T getItem(int index){
